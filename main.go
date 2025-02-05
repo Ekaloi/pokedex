@@ -1,7 +1,19 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func main() {
-	fmt.Println("Welcome to Pokedex!")
+	fmt.Println("Hello, World!")
+}
+
+func cleanInput(text string) []string {
+	text = strings.TrimSpace(text)
+	fmt.Println(text)
+
+	x := strings.Fields(text)
+	fmt.Println(x)
+	return x
 }
