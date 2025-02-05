@@ -1,6 +1,6 @@
 package main
 
-import "github.com/Ekaloi/pokedex/pokeapi"
+import "github.com/Ekaloi/pokedex/internal/pokeapi"
 
 
 func main() {

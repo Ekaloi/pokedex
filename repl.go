@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 	"strings"
-	"github.com/Ekaloi/pokedex/pokeapi"
+	"github.com/Ekaloi/pokedex/internal/pokeapi"
 )
 
 func startRepl(cfg *config) {
