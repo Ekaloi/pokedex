@@ -1,19 +1,18 @@
 package main
 
-import (
-	"fmt"
-	"strings"
-)
+import "github.com/Ekaloi/pokedex/pokeapi"
+
 
 func main() {
-	fmt.Println("Hello, World!")
+	pokeClient := pokeapi.NewClient()
+	cfg := &config{
+		pokeapiClient: pokeClient,
+	}
+
+	startRepl(cfg)
 }
 
-func cleanInput(text string) []string {
-	text = strings.TrimSpace(text)
-	fmt.Println(text)
 
-	x := strings.Fields(text)
-	fmt.Println(x)
-	return x
-}
+
+
+
