@@ -26,10 +26,6 @@ type EncounterMethodRate struct {
 	VersionDetails  []VersionDetail `json:"version_details"`
 }
 
-type VersionDetail struct {
-	Rate    int     `json:"rate"`
-	Version Version `json:"version"`
-}
 
 type Location struct {
 	Name string `json:"name"`

@@ -26,10 +26,11 @@ func (c *Client) ExploreLocation(area string) ([]Pokemon, error){
 		defer resp.Body.Close()
 
 		dat, err := io.ReadAll(resp.Body)
+		c.cache.Add(url, dat)
 		if err != nil {
 			return make([]Pokemon, 0), fmt.Errorf("err reading response: %w", err)
 		}
-		
+
 		err = json.Unmarshal(dat,&areaData)
 		if err != nil {
 			return make([]Pokemon, 0), fmt.Errorf("err decoding response: %w", err)
