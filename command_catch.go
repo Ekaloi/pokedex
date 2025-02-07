@@ -19,6 +19,7 @@ func commandCatch(c *config, args []string) error {
 	rand.Seed(time.Now().UnixNano())
 	val := catch(pokemon.BaseExperience)
 	if val {
+		c.pokeapiClient.Cache.Catch(args[1], pokemon)
 		fmt.Printf("%s was caught!\n", args[1])
 		return nil
 	} else {

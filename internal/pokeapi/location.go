@@ -10,7 +10,7 @@ import (
 func (c *Client) ExploreLocation(area string) ([]Pokemon, error){
 	url := baseURL + "/location-area/" + area 
 
-	data, present  := c.cache.Get(url)
+	data, present  := c.Cache.Get(url)
 	var areaData AreaData
 	if !present{
 		req, err := http.NewRequest("GET", url, nil)
@@ -26,7 +26,7 @@ func (c *Client) ExploreLocation(area string) ([]Pokemon, error){
 		defer resp.Body.Close()
 
 		dat, err := io.ReadAll(resp.Body)
-		c.cache.Add(url, dat)
+		c.Cache.Add(url, dat)
 		if err != nil {
 			return make([]Pokemon, 0), fmt.Errorf("err reading response: %w", err)
 		}

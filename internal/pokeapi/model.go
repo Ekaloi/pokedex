@@ -1,5 +1,7 @@
 package pokeapi
 
+import "github.com/Ekaloi/pokedex/poketypes"
+
 type RespShallowLocations struct {
 	Count    int     `json:"count"`
 	Next     *string `json:"next"`
@@ -23,7 +25,7 @@ type Version struct {
 
 type EncounterMethodRate struct {
 	EncounterMethod EncounterMethod `json:"encounter_method"`
-	VersionDetails  []VersionDetail `json:"version_details"`
+	VersionDetails  []poketypes.VersionDetail `json:"version_details"`
 }
 
 

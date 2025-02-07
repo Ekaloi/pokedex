@@ -1,4 +1,4 @@
-package pokeapi
+package poketypes
 
 type PokemonActual struct {
 	ID                     int              `json:"id"`
